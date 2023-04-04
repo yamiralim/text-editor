@@ -1,0 +1,133 @@
+/* app shell CSS */
+@import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
+
+:root {
+  --primary: #31a9e1;
+  --gray: #ececec;
+  --whitesmoke: #f5f5f5;
+  --dark: #222;
+  --monoaki: #272822;
+  --navbar-height: 50px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--monoaki);
+  font-family: 'Sono', sans-serif;
+}
+
+header {
+  height: 21vh;
+}
+
+.title {
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: center;
+}
+
+h1 {
+  font-size: 46px;
+  letter-spacing: 26px;
+}
+
+p {
+  font-size: 20px;
+}
+
+#navbar {
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-size: 22px;
+  font-weight: 550;
+  letter-spacing: 0.9px;
+}
+
+.navbar-brand img {
+  padding-top: 10px;
+  padding-right: 19px;
+}
+
+.loading-spinner {
+  animation-duration: 0.75s;
+  animation-iteration-count: infinite;
+  animation-name: rotate-forever;
+  animation-timing-function: linear;
+  height: 30px;
+  width: 30px;
+  border: 3px solid var(--primary);
+  border-right-color: transparent;
+  border-radius: 50%;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes rotate-forever {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.app-update {
+  display: none;
+  position: absolute;
+  right: 10px;
+}
+
+.app-update.show {
+  display: block;
+}
+
+.nav-btn {
+  margin: 25px;
+}
+
+.btn {
+  text-align: center;
+  display: inline-block;
+  padding: 0.8rem;
+  text-decoration: none;
+  font-size: 1.25rem;
+  border-radius: 0.3rem;
+  border: 1px solid transparent;
+  outline: none;
+  color: #ffff;
+  background-color: var(--primary);
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  box-shadow: 0px 7px 10px var(--whitesmoke);
+}
+
+.btn:hover {
+  background-color: var(--whitesmoke);
+  color: var(--primary);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-btn {
+    display: none;
+  }
+
+  .navbar-brand {
+    display: none;
+  }
+
+  #navbar {
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+}
